@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FoxPrefab: {fileID: 4142462172781340051, guid: e1e6b91454e2f4a9e943f6c33ce6fa3f, type: 3}
-  AmountToSpawn: 500
+  AmountToSpawn: 12000
 --- !u!4 &149517280
 Transform:
   m_ObjectHideFlags: 0

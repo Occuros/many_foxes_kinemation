@@ -1,3 +1,5 @@
+using Latios.Kinemation.Systems;
+using Latios.Systems;
 using Unity.Burst;
 using Unity.Entities;
 using Unity.Mathematics;
@@ -6,6 +8,8 @@ using Latios.Transforms;
 
 namespace DefaultNamespace
 {
+    [UpdateInGroup(typeof(LatiosWorldSyncGroup))]
+    [UpdateBefore(typeof(KinemationFrameSyncPointSuperSystem))]
     public partial struct FoxSpawnerSystem : ISystem
     {
         private const float RING_SPACING = 2.0f;
@@ -49,7 +53,7 @@ namespace DefaultNamespace
                     var foxTransform = SystemAPI.GetAspect<TransformAspect>(foxEntity);
                     foxTransform.worldPosition = new float3(x, 0.0f, z);
                     foxTransform.worldRotation = math.mul(baseRotation, quaternion.RotateY(-foxAngle));
-                    foxTransform.worldScale = 1.0f;
+                    foxTransform.worldScale = 1f;
                 }
 
                 foxedRemaining -= foxesInRing;

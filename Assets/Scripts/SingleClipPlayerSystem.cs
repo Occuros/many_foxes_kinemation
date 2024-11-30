@@ -13,7 +13,7 @@ using static Unity.Entities.SystemAPI;
 namespace DefaultNamespace
 {
     [UpdateBefore(typeof(TransformSuperSystem))]
-    [DisableAutoCreation]
+    // [DisableAutoCreation]
     public partial struct SingleClipPlayerSystem : ISystem
     {
         [BurstCompile]
